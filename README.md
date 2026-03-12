@@ -5,7 +5,7 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![Roboflow](https://img.shields.io/badge/Roboflow-6706ce?style=for-the-badge&logo=roboflow&logoColor=white)](https://roboflow.com/)
 
-> **The "Be so good they can't ignore you" Project.** An AI-powered image management dashboard that transforms raw assets into searchable, categorized data using Roboflow's Inference API.
+> An AI-powered image management dashboard that transforms raw assets into searchable, categorized data using Roboflow's Inference API.
 
 ## 🚀 Overview
 
@@ -31,3 +31,53 @@ const response = await axios({
   params: { api_key: API_KEY },
   data: base64Data
 });
+
+```
+
+### Challenges Overcome
+
+* **Base64 Handling**: Efficiently converting browser-side images to the specific format required by the inference server.
+* **State Management**: Handling asynchronous AI responses while maintaining a fluid, reactive UI.
+
+## 📦 Getting Started
+
+### Prerequisites
+
+* Node.js (v24+)
+* A Roboflow Private API Key
+
+### Installation
+
+1. **Clone the repository (SSH)**
+```bash
+git clone git@github.com:YOUR_USERNAME/roboflow-smart-assets.git
+cd roboflow-smart-assets
+
+```
+
+2. **Install dependencies**
+```bash
+npm install --legacy-peer-deps
+
+```
+
+3. **Configure Environment**
+Create a `.env` file in the root directory:
+```env
+VITE_ROBOFLOW_API_KEY=your_key_here
+
+```
+
+4. **Run Development Server**
+```bash
+npm run dev
+
+```
+
+## 🧠 Why I Built This?
+
+In Roboflow’s mission to "make the world programmable," the bridge between raw visual data and actionable software is the most critical component. I built this to demonstrate how a **Passionate Builder** can integrate SOTA (State-Of-The-Art) computer vision into a production-ready interface in a matter of hours.
+
+---
+
+Built with ⚡ by Oiertxo

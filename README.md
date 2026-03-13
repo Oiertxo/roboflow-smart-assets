@@ -26,3 +26,37 @@
 
 ### Security-First Implementation (BFF Pattern)
 To follow industry best practices, the application uses a **Backend-for-Frontend (BFF)** pattern. Instead of exposing the Private API Key in the browser, the frontend communicates with a secure Cloudflare Worker.
+
+### Challenges Overcome
+
+* **API Key Hardening**: Migrated from client-side API calls to a serverless proxy to prevent credential leakage.
+* **Infrastructure Resilience**: Successfully pivoted deployment from Vercel to Cloudflare Pages to bypass regional ISP/DNS restrictions.
+* **Dependency Management**: Solved upstream peer-dependency conflicts between Vite 8 and Tailwind 4 using a customized `.npmrc` configuration.
+
+## 📦 Getting Started
+
+### Installation
+
+1. **Clone the repository**
+
+```bash
+git clone https://github.com/Oiertxo/roboflow-smart-assets.git
+cd roboflow-smart-assets
+```
+
+2. **Install dependencies**
+
+```bash
+npm install
+```
+
+3. **Configure Local Environment**
+To test the serverless functions locally, use the Wrangler CLI:
+
+```bash
+npx wrangler pages dev ./dist --binding PRIVATE_ROBOFLOW_KEY="your_key"
+```
+
+---
+
+Built with ⚡ by Oiertxo

@@ -7,31 +7,24 @@ const MODEL_ID = "coco/3"; // Standard object detection model
  * Service to handle image analysis using Roboflow's inference API.
  */
 export const analyzeImage = async (base64Data) => {
-  if (!API_KEY) {
-    throw new Error("Roboflow API Key is missing in .env file");
-  }
-
   try {
-    // We send the base64 image data to Roboflow's hosted inference server
     const response = await axios({
       method: "POST",
-      url: `https://outline.roboflow.com/${MODEL_ID}`,
-      params: {
-        api_key: API_KEY,
+      url: "/analyze", 
+      data: {
+        image: base64Data
       },
-      data: base64Data,
       headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
+        "Content-Type": "application/json",
       },
     });
 
     return response.data;
   } catch (error) {
-    console.error("Error analyzing image:", error.response?.data || error.message);
+    console.error("Error analyzing image via Proxy:", error.response?.data || error.message);
     throw error;
   }
 };
-
 
 // Mock service to test the UI without an API Key
 export const analyzeImageMock = async (base64Data) => {
